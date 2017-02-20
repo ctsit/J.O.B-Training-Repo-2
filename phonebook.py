@@ -16,8 +16,6 @@ sorted_by_last = sorted(contacts, key=lambda tup: tup[1])
 
 print sorted_by_last
 
-f = open(os.getcwd() + "/contacts.sorted", "w")
-
 with open('output.csv','w') as out:
    csv_out=csv.writer(out)
    csv_out.writerow(header)
