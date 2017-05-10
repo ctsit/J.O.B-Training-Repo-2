@@ -1,16 +1,15 @@
 #Import Python modules for handling csv
 import sys
 import csv
-
+import operator
 #Open phonebook.csv file
-myfile = csv.reader(open("phonebook.csv", 'rU'), delimiter=",", dialect=csv.excel_tab)
-
-contlist=[]
-#Return information from file
-for first_name, last_name, phone1 in myfile:
-    contlist.append((first_name, last_name, phone1))
-
-sortedlist = sorted(contlist, key=lambda tup: tup[1])
-sortedlist = sortedlist[:-1]
-with open('sorted.txt', 'w') as fp:
-    fp.write('\n'.join('%s %s %s' % x for x in sortedlist))
+with open("phonebook.csv", "rU") as myfile:
+    checkreader = csv.reader(myfile)
+    header = next(checkreader)
+    sorted_data = sorted(checkreader, key = operator.itemgetter(1))
+with open("newphonebook.csv", "wb") as my_file:
+    fileWriter = csv.writer(my_file, delimiter=',')
+    if header:
+        fileWriter.writerow(header)
+    for row in sorted_data:
+        fileWriter.writerow(row)
