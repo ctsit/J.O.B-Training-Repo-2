@@ -13,3 +13,4 @@ with open("newphonebook.csv", "wb") as my_file:
         fileWriter.writerow(header)
     for row in sorted_data:
         fileWriter.writerow(row)
+#I don't know how to edit python in terminal
