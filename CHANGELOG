@@ -1,3 +1,9 @@
+## [1.0.0] - 2017-07-26
+### Added
+ * Added Tobys digits
+ * Added Bucks name to phonebook
+ * Added new phonebook sorter 
+
 ## [0.2.0] - 2017-06-28
 ### Changed
 * Multiple changes to phonebook.py by many amazing collaborators
