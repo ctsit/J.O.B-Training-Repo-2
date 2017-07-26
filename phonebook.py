@@ -9,7 +9,7 @@ import operator
 with open("phonebook.csv", "rU") as myfile:
     checkreader = csv.reader(myfile)
     header = next(checkreader)
-    sorted_data = sorted(checkreader, key = operator.itemgetter(1))
+    sorted_data = sorted(checkreader, key = operator.itemgetter(0))
 with open("newphonebook.csv", "wb") as my_file:
     fileWriter = csv.writer(my_file, delimiter=',')
     if header:
